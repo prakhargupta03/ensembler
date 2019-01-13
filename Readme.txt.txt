@@ -19,3 +19,4 @@ add  node version to package.json
   }
 
 make a requirements.txt file in root folder
+heroku ps:scale web=1
