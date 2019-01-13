@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ensample</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div>
+    <h1>
+      Ensample
+    </h1>
+  </div>
+  <form class="fileupload" action="upload" method="post" enctype="multipart/form-data">
+    <label for="fileUpload" id="upfile">
+      <span>Select a csv file: </span>
+      <input type="file" name="upfile" value="" required accept=".csv" onchange="showname()" style="display:none;"/>
+      <button type="button" onclick="getFile()">Click here!</button>       
+    </label>
+    
+    <br>
+    
+    <label for="emailInput">
+      <span>Enter Your E-mail: </span><input  type="email" name="emailaddress"  required="true" />
+    </label>
+    
+    <br>
+
+    <label class="container">Classification
+      <input type="radio" checked="checked" name="radio">
+      <span class="checkmark"></span>
+      </label>
+    <label class="container">Regression
+      <input type="radio" name="radio">
+      <span class="checkmark"></span>
+     </label>
+
+    <input type="submit" />
+  </form>
+  <script>
+    function getFile(){
+     document.getElementById("upfile").querySelector("input").click();
+    }
+
+     function showname () {
+      var k = document.getElementById('upfile');
+      var name = k.querySelector("input").files.item(0).name;
+      k.querySelector("button").innerHTML= name
+      var extension = name.split(".").pop()
+      console.log('file extension'+extension);
+      if(extension!=='csv'){
+        console.log('file not csv file');
+        k.querySelector("button").innerHTML= "file not csv file";
+        k.querySelector("input").value = k.querySelector("input").defaultValue;
+      }
+      window.onload = function() {
+        document.getElementById('upfile').querySelector("button").innerHTML=document.getElementById('upfile').querySelector("input").files.item(0).name
+      }
+    };
+  </script>
+</body>
+</html>
