@@ -14,6 +14,7 @@ def dir_change():
 	os.system(cmd)
 
 def mail(send_to_email):
+	import os
 	print("\n\nMailing the results")
 	import smtplib
 	from email.mime.text import MIMEText
@@ -21,9 +22,8 @@ def mail(send_to_email):
 	from email.mime.base import MIMEBase
 	from email import encoders
 	import ntpath
-
-	email = 'gprakhar8756@gmail.com'
-	password = ''
+	email = os.environ.get('EMAIL')
+	password = os.environ.get('PASSWORD')
 	subject = "Ensembling Model Results"
 	message = "Please find the attachment named as result.txt and result.csv  for result"
 	
