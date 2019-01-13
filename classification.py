@@ -1,18 +1,10 @@
 def dir_change():
+	
 	import os
 	
-	
-	cmd = "RD /S /Q uploads"
-	os.system(cmd)
-	
-	cmd = "RD /S /Q results"
-	os.system(cmd)
+	os.mkdir("results")
+	os.mkdir("uploads")
 
-	cmd = "MD results"
-	os.system(cmd)
-	
-	cmd = "MD uploads"
-	os.system(cmd)
 
 def mail(send_to_email):
 	import os

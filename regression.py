@@ -1,17 +1,9 @@
 def dir_change():
 	
 	import os
-	cmd = "RD /S /Q uploads"
-	os.system(cmd)
 	
-	cmd = "RD /S /Q results"
-	os.system(cmd)
-
-	cmd = "MD results"
-	os.system(cmd)
-	
-	cmd = "MD uploads"
-	os.system(cmd)
+	os.mkdir("results")
+	os.mkdir("uploads")
 
 def mail(send_to_email):
 	import os
@@ -140,11 +132,11 @@ def calculate(filepath):
 def main():
     # input_file = "data2.csv"
     # email = 'prakharpg.83@gmail.com'
+	dir_change()
     input_file = input()
     email = input()
     calculate(input_file)
     mail(email)
-    dir_change()
 
 if __name__ == "__main__":
     main()
