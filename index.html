@@ -1,194 +1,253 @@
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Ensample</title>
-  <style>
-    body{
-    display: flex;
-    justify-content: center;  
-    min-height: 100vh;
-    align-items: center;
-      flex-direction: column;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ensempler</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;  
+            min-height: 100vh;
+            align-items: center;
+            flex-direction: column;
+            background: rgba(73, 92, 112, 0.582);
+            background-image: url('https://thomasstorage1.blob.core.windows.net/wp-media/2017/11/tech-background.png');
+            background-size: cover
+        }
 
-  div{
-      padding-top: 15px
-  }
-  form{
-      width: 450px;
-    font-size: 16px;
-    background: #495C70;
-    padding: 30px 30px 15px 30px;
-      border: 5px solid #53687E;
-      /* display: flex;
-      flex-direction: column; */
-  }
-
-  form input[type=email],
-  #upfile button,
-  form label
-  {
-      font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 16px;
-    color: #fff;
-  }
-
-  form label {
-    display:block;
-    margin-bottom: 10px;
-  }
-
-  form input[type=email] 
-  {
-    background: transparent;
-    border: none;
-    border-bottom: 1px dashed #83A4C5;
-    width: 275px;
-    outline: none;
-    padding: 0px 0px 0px 0px;
-    font-style: italic;
-  }
-
-  form input[type=email] :focus
-  {
-    background: #394D61;
-  }
+        #main-div2{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center
+        }
 
 
-  form input[type=submit],
-  #upfile button,
-  form input[type=button]{
-    background: #576E86;
-    border: none;
-    padding: 8px 10px 8px 10px;
-    border-radius: 5px;
-    color: #A8BACE;
-  }
+        #main-div2 div{
+            margin: 10px
+        }   
 
-  form input[type=submit]:hover,
-  #upfile button:hover{
-      background: #394D61;
-  }
+        #main-div1{
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            margin: 10px;
+            padding: 15px
+        }
 
-  #upfile button{
-      border: 1px dashed #BBB;
-      cursor:pointer;
-      background: transparent;
-  }
+        #inner-div1,
+        #inner-div2{
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-size: 12px;
+            color: #fff;
+        }
 
-  .container {
-      display: block;
-      position: relative;
-      padding-left: 35px;
-      margin-bottom: 12px;
-      cursor: pointer;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 16px;
-      color: #fff;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-  }
-  .container input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-    }
-    
-    .checkmark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 15px;
-      width: 15px;
-      background-color: #eee;
-      border-radius: 50%;
-    }
-    
-    .container:hover input ~ .checkmark {
-      background-color: #ccc;
-    }
-    
-    .container input:checked ~ .checkmark {
-    background-color: seagreen;
-    }
-    
-    .checkmark:after {
-      content: "";
-      position: absolute;
-      display: none;
-    }
-    
-    .container input:checked ~ .checkmark:after {
-      display: block;
-    }
-    
-    .container .checkmark:after {
-        top: 4px;
-        left: 4px;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: white;
-    }
-  </style>
+        #inner-div1,
+        #inner-div2,
+        form{
+            max-width: 350px;
+            font-size: 16px;
+            background: #58677698;
+            padding: 30px 30px 15px 30px;
+            border: 5px solid #53687E;
+            border-radius: 25px;
+            /* display: flex;
+            flex-direction: column; */
+        }
+
+        form input[type=email],
+        #upfile button,
+        form label
+        {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        form label {
+            display:block;
+            margin-bottom: 10px;
+        }
+
+        form input[type=email] 
+        {
+            background: transparent;
+            border: none;
+            border-bottom: 1px dashed #83A4C5;
+            width: 210px;
+            outline: none;
+            padding: 0px 0px 0px 0px;
+            font-style: italic;
+        }
+
+        form input[type=email] :focus
+        {
+            background: #394D61;
+        }
+
+
+        form input[type=submit],
+        #upfile button,
+        form input[type=button]{
+            background: #576E86;
+            border: none;
+            padding: 8px 10px 8px 10px;
+            border-radius: 5px;
+            color: #A8BACE;
+        }
+
+        form input[type=submit]:hover,
+        #upfile button:hover{
+            background: #394D61;
+        }
+
+        #upfile button{
+            border: 1px dashed #BBB;
+            cursor:pointer;
+            background: transparent;
+        }
+
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-size: 16px;
+            color: #fff;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 15px;
+            width: 15px;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+        
+        .container:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+        
+        .container input:checked ~ .checkmark {
+        background-color: seagreen;
+        }
+        
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        
+        .container input:checked ~ .checkmark:after {
+            display: block;
+        }
+        
+        .container .checkmark:after {
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+        }
+    </style>
 </head>
+
 <body>
-  <div>
-    <h1>
-      Ensample
-    </h1>
-  </div>
-  <form class="fileupload" action="upload" method="post" enctype="multipart/form-data">
-    <label for="fileUpload" id="upfile">
-      <span>Select a csv file: </span>
-      <input type="file" name="upfile" value="" required accept=".csv" onchange="showname()" style="display:none;"/>
-      <button type="button" onclick="getFile()">Click here!</button>       
-    </label>
-    
-    <br>
-    
-    <label for="emailInput">
-      <span>Enter Your E-mail: </span><input  type="email" name="emailaddress"  required="true" />
-    </label>
-    
-    <br>
+    <div id='main-div1'>
+        <h1>Ensembler</h1>
+        A Webservice which can help you to pick best possible combination of your machine learning models to get
+        maximum accuracy
 
-    <label class="container">Classification
-      <input type="radio" checked="checked" name="radio" value="Classification">
-      <span class="checkmark"></span>
-      </label>
-    <label class="container">Regression
-      <input type="radio" name="radio" value="Regression">
-      <span class="checkmark"></span>
-     </label>
+    </div>
 
-    <input type="submit" />
-  </form>
-  <script>
-    function getFile(){
-     document.getElementById("upfile").querySelector("input").click();
-    }
+    <div id='main-div2'>
+        <div id="inner-div1">
+            <h3>Instructions:</h3>
+            <span>
+                1. Upload your file in CSV format.(First column of CSV file should have actual values as shown in the
+                figure below.)
+            </span>
+            <br> <br>
+            <img src="sample_format.png" alt="sample image" style="width: 100%;">
+            <br> <br>
+            <span>2. Fill your email id on which you want the results to be mailed.</span>
+        </div>
+        <div>
+            <form class="fileupload" action="upload" method="post" enctype="multipart/form-data">
+                <label for="fileUpload" id="upfile">
+                    <span>Select a csv file: </span>
+                    <input type="file" name="upfile" value="" required accept=".csv" onchange="showname()" style="display:none;" />
+                    <button type="button" onclick="getFile()">Click here!</button>
+                </label>
 
-     function showname () {
-      var k = document.getElementById('upfile');
-      var name = k.querySelector("input").files.item(0).name;
-      k.querySelector("button").innerHTML= name
-      var extension = name.split(".").pop()
-      console.log('file extension: '+extension);
-      if(extension!=='csv'){
-        console.log('file not csv file');
-        k.querySelector("button").innerHTML= "file not csv file";
-        k.querySelector("input").value = k.querySelector("input").defaultValue;
+                <br>
 
-      }
-      // window.onload = function() {
-      //   document.getElementById('upfile').querySelector("button").innerHTML=document.getElementById('upfile').querySelector("input").files.item(0).name
-      // }
-    };
-  </script>
+                <label for="emailInput">
+                    <span>Enter Your E-mail: </span><input type="email" name="emailaddress" required="true" />
+                </label>
+
+                <br>
+
+                <label class="container">Classification
+                    <input type="radio" checked="checked" name="radio" value="Classification">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Regression
+                    <input type="radio" name="radio" value="Regression">
+                    <span class="checkmark"></span>
+                </label>
+
+                <input type="submit" id="submit-button" />
+            </form>
+            <div id="inner-div2" style="text-align:center">
+                <h4> Developed By:</h4>
+                Nikhil Jain
+                <br>
+                Prakhar Gupta
+                <br>
+                Prabhjot Singh
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function getFile() {
+            document.getElementById("upfile").querySelector("input").click();
+        }
+
+        function showname() {
+            var k = document.getElementById('upfile');
+            var name = k.querySelector("input").files.item(0).name;
+            k.querySelector("button").innerHTML = name
+            var extension = name.split(".").pop()
+            console.log('file extension: ' + extension);
+            document.getElementById("submit-button").disabled = ""
+            k.querySelector("button").style.border = "1px dashed #BBB";
+            if (extension !== 'csv') {
+                console.log('file not csv file');
+                k.querySelector("button").innerHTML = "file not csv file";
+                k.querySelector("input").value = k.querySelector("input").defaultValue;
+                document.getElementById("submit-button").disabled = "disabled"
+                k.querySelector("button").style.border = "1px dashed red";
+            }
+        };
+    </script>
 </body>
+
 </html>
