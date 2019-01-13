@@ -28,7 +28,7 @@ app.post('/upload',function(req,res){
         res.send("Error Occured!")
       }
       else {
-        res.send('We have sent you an email');
+        res.send('Request Received. We will send you an email soon');
       }
       console.log("File Uploaded",name);
       email = req.body.emailaddress

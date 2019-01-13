@@ -22,8 +22,10 @@ def mail(send_to_email):
 	from email.mime.base import MIMEBase
 	from email import encoders
 	import ntpath
-	email = os.environ.get('EMAIL')
-	password = os.environ.get('PASSWORD')
+	# email = os.environ.get('EMAIL')
+	# password = os.environ.get('PASSWORD')
+	email = 'gprakhar8756@gmail.com'
+	password = 'PrakharGupta#097'
 	subject = "Ensembling Model Results"
 	message = "Please find the attachment named as result.txt and result.csv  for result"
 	
