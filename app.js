@@ -25,7 +25,7 @@ app.post('/upload',function(req,res){
     file.mv(uploadpath,function(err){
       if(err){
         console.log("File Upload Failed",name,err);
-        res.send("Error Occured!")
+        res.send("Error Occured! while uploading file")
       }
       else {
         res.send('Request Received. We will send you an email soon');

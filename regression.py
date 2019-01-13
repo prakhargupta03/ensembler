@@ -133,10 +133,10 @@ def main():
     # input_file = "data2.csv"
     # email = 'prakharpg.83@gmail.com'
 	dir_change()
-    input_file = input()
-    email = input()
-    calculate(input_file)
-    mail(email)
+	input_file = input()
+	email = input()
+	calculate(input_file)
+	mail(email)
 
 if __name__ == "__main__":
     main()

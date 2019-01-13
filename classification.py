@@ -139,11 +139,12 @@ def main():
     # input_file = "classification.csv"
     # input_file = "Data_MultiClass.csv"
     # email = 'prakharpg.83@gmail.com'
-    input_file = input()
-    email = input()
-    calculate_results(input_file)
-    mail(email)
-    dir_change()
+	dir_change()
+	input_file = input()
+	email = input()
+	calculate_results(input_file)
+	mail(email)
+    
 
 if __name__ == "__main__":
     main()
