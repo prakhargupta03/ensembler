@@ -28,23 +28,23 @@ app.post('/upload',function(req,res){
         res.send("Error Occured!")
       }
       else {
-        console.log("File Uploaded",name);
-        email = req.body.emailaddress
-        //console.log(email)
-        model = req.body.model
-        //console.log(model)
-        let {PythonShell} = require('python-shell')
-        if (model === 'Classification')
-          pyshell = new PythonShell('classification.py');
-        else
-          pyshell = new PythonShell('regression.py');
-        pyshell.send(filename);
-        pyshell.send(email);
-        pyshell.on('message', function (message) {
-          console.log(message);
-          res.send('We have sent you an email');
-        });      
+        res.send('We have sent you an email');
       }
+      console.log("File Uploaded",name);
+      email = req.body.emailaddress
+      //console.log(email)
+      model = req.body.model
+      //console.log(model)
+      let {PythonShell} = require('python-shell')
+      if (model === 'Classification')
+        pyshell = new PythonShell('classification.py');
+      else
+        pyshell = new PythonShell('regression.py');
+      pyshell.send(filename);
+      pyshell.send(email);
+      pyshell.on('message', function (message) {
+      console.log(message);  
+      }); 
     });
   }
   else {
