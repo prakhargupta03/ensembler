@@ -1,10 +1,3 @@
-def dir_change():
-	
-	import os
-	
-	os.mkdir("results")
-	os.mkdir("uploads")
-
 def mail(send_to_email):
 	import os
 	print("\n\nMailing the results")
@@ -32,7 +25,7 @@ def mail(send_to_email):
 
 	msg.attach(MIMEText(body, 'plain'))
 	
-	file_location = 'results\\result_reg.txt'
+	file_location = 'result_reg.txt'
 	filename = ntpath.basename(file_location)
 	attachment = open(file_location, "rb")
 	part = MIMEBase('application', 'octet-stream')
@@ -41,7 +34,7 @@ def mail(send_to_email):
 	part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
 	msg.attach(part)
 	
-	file_location = 'results\\result_reg.csv'
+	file_location = 'result_reg.csv'
 	filename = ntpath.basename(file_location)
 	attachment = open(file_location, "rb")
 	part = MIMEBase('application', 'octet-stream')
@@ -73,7 +66,7 @@ def calculate(filepath):
 	max_acc_model_count = 0
 	max_acc_model_names = []
 	ind = 0
-	f1 = open("results\\result_reg.csv","w+")
+	f1 = open("result_reg.csv","w+")
 	f1.write("Iteration,No_of_models_picked,Models_Picked,Accuracy\n")
 	
 	for i in range(10):
@@ -121,7 +114,7 @@ def calculate(filepath):
 
 	
 	
-	f = open("results\\result_reg.txt","w+")
+	f = open("result_reg.txt","w+")
 	f.write("Results are:\n\n")
 	f.write("Maximum Accuracy is: "+str(accuracy_final)+"\n")
 	f.write("No of models used: "+str(max_acc_model_count)+"\n")
@@ -132,7 +125,6 @@ def calculate(filepath):
 def main():
     # input_file = "data2.csv"
     # email = 'prakharpg.83@gmail.com'
-	dir_change()
 	input_file = input()
 	email = input()
 	calculate(input_file)

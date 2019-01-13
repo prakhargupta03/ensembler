@@ -1,11 +1,3 @@
-def dir_change():
-	
-	import os
-	
-	os.mkdir("results")
-	os.mkdir("uploads")
-
-
 def mail(send_to_email):
 	import os
 	
@@ -22,7 +14,7 @@ def mail(send_to_email):
 	# password = os.environ.get('PASSWORD')
 	subject = "Ensembling Model Results"
 	message = "Please find the attachment named as result.txt for result"
-	file_location = 'results\\result.txt'
+	file_location = 'result.txt'
 	msg = MIMEMultipart()
 
 	msg['From'] = email
@@ -43,7 +35,7 @@ def mail(send_to_email):
 
 	msg.attach(part)
 
-	file_location = 'results\\result.csv'
+	file_location = 'result.csv'
 	filename = ntpath.basename(file_location)
 	attachment = open(file_location, "rb")
 	part = MIMEBase('application', 'octet-stream')
@@ -119,17 +111,17 @@ def calculate_results(input_file):
 			max_acc = round(accuracy_score(Actual,Pred),5)
 			max_acc_model_count = i
 			max_acc_model_names = models
-		saved_file = "results\\Predicted"+str(k)+".csv"
+		saved_file = "Predicted"+str(k)+".csv"
 		df.to_csv(saved_file,encoding='utf-8', index=False)
 		
-	df1.to_csv("results//result.csv",encoding='utf-8', index=False)
+	df1.to_csv("result.csv",encoding='utf-8', index=False)
 	
 	print("\n\nmax_Acc:",max_acc)
 	print("max_acc_model_count:",max_acc_model_count)
 	print("max_acc_model_names:",max_acc_model_names)
 	
 	
-	f = open("results\\result.txt","w+")
+	f = open("result.txt","w+")
 	f.write("Results are:\n\n")
 	f.write("Maximum Accuracy is: "+str(max_acc)+"\n")
 	f.write("No of models used: "+str(max_acc_model_count)+"\n")
@@ -139,7 +131,6 @@ def main():
     # input_file = "classification.csv"
     # input_file = "Data_MultiClass.csv"
     # email = 'prakharpg.83@gmail.com'
-	dir_change()
 	input_file = input()
 	email = input()
 	calculate_results(input_file)

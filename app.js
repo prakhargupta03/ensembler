@@ -21,7 +21,7 @@ app.post('/upload',function(req,res){
       name = file.name,
       filename = name
       type = file.mimetype;
-    var uploadpath = __dirname + '/uploads/' + name;
+    var uploadpath = __dirname + '/' + name;
     file.mv(uploadpath,function(err){
       if(err){
         console.log("File Upload Failed",name,err);
