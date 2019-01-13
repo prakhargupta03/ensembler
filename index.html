@@ -10,138 +10,130 @@
     justify-content: center;  
     min-height: 100vh;
     align-items: center;
-    flex-direction: column;
-}
+      flex-direction: column;
+  }
 
-div{
-    padding-top: 15px
-}
-form{
-    width: 450px;
-	font-size: 16px;
-	background: #495C70;
-	padding: 30px 30px 15px 30px;
-    border: 5px solid #53687E;
-    /* display: flex;
-    flex-direction: column; */
-}
+  div{
+      padding-top: 15px
+  }
+  form{
+      width: 450px;
+    font-size: 16px;
+    background: #495C70;
+    padding: 30px 30px 15px 30px;
+      border: 5px solid #53687E;
+      /* display: flex;
+      flex-direction: column; */
+  }
 
-form input[type=email],
-#upfile button,
-form label
-{
-    font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 16px;
-	color: #fff;
-}
+  form input[type=email],
+  #upfile button,
+  form label
+  {
+      font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 16px;
+    color: #fff;
+  }
 
-form label {
-	display:block;
-	margin-bottom: 10px;
-}
+  form label {
+    display:block;
+    margin-bottom: 10px;
+  }
 
-form input[type=email] 
-{
-	background: transparent;
-	border: none;
-	border-bottom: 1px dashed #83A4C5;
-	width: 275px;
-	outline: none;
-	padding: 0px 0px 0px 0px;
-	font-style: italic;
-}
-
-form input[type=email] :focus
-{
-	background: #394D61;
-}
-
-
-form input[type=submit],
-#upfile button,
-form input[type=button]{
-	background: #576E86;
-	border: none;
-	padding: 8px 10px 8px 10px;
-	border-radius: 5px;
-	color: #A8BACE;
-}
-
-form input[type=submit]:hover,
-#upfile button:hover{
-    background: #394D61;
-}
-
-#upfile button{
-    border: 1px dashed #BBB;
-    cursor:pointer;
+  form input[type=email] 
+  {
     background: transparent;
-}
+    border: none;
+    border-bottom: 1px dashed #83A4C5;
+    width: 275px;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+    font-style: italic;
+  }
 
-.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 16px;
-	color: #fff;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-  
-  /* Hide the browser's default radio button */
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+  form input[type=email] :focus
+  {
+    background: #394D61;
   }
-  
-  /* Create a custom radio button */
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 15px;
-    width: 15px;
-    background-color: #eee;
-    border-radius: 50%;
+
+
+  form input[type=submit],
+  #upfile button,
+  form input[type=button]{
+    background: #576E86;
+    border: none;
+    padding: 8px 10px 8px 10px;
+    border-radius: 5px;
+    color: #A8BACE;
   }
-  
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
+
+  form input[type=submit]:hover,
+  #upfile button:hover{
+      background: #394D61;
   }
-  
-  /* When the radio button is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-   background-color: seagreen;
+
+  #upfile button{
+      border: 1px dashed #BBB;
+      cursor:pointer;
+      background: transparent;
   }
-  
-  /* Create the indicator (the dot/circle - hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+
+  .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 16px;
+      color: #fff;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
   }
-  
-  /* Show the indicator (dot/circle) when checked */
-  .container input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the indicator (dot/circle) */
-  .container .checkmark:after {
-       top: 4px;
-      left: 4px;
-      width: 8px;
-      height: 8px;
+  .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 15px;
+      width: 15px;
+      background-color: #eee;
       border-radius: 50%;
-      background: white;
-  }
+    }
+    
+    .container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+    
+    .container input:checked ~ .checkmark {
+    background-color: seagreen;
+    }
+    
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    
+    .container .checkmark:after {
+        top: 4px;
+        left: 4px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
   </style>
 </head>
 <body>
@@ -191,6 +183,7 @@ form input[type=submit]:hover,
         console.log('file not csv file');
         k.querySelector("button").innerHTML= "file not csv file";
         k.querySelector("input").value = k.querySelector("input").defaultValue;
+
       }
       // window.onload = function() {
       //   document.getElementById('upfile').querySelector("button").innerHTML=document.getElementById('upfile').querySelector("input").files.item(0).name

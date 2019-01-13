@@ -33,7 +33,7 @@ app.post('/upload',function(req,res){
       console.log("File Uploaded",name);
       email = req.body.emailaddress
       //console.log(email)
-      model = req.body.model
+      model = req.body.radio
       //console.log(model)
       let {PythonShell} = require('python-shell')
       if (model === 'Classification')

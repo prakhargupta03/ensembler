@@ -67,7 +67,7 @@ def calculate(filepath):
 	f1 = open("result_reg.csv","w+")
 	f1.write("Iteration,No_of_models_picked,Models_Picked,Accuracy\n")
 	
-	for i in range(10):
+	for i in range(100):
 		
 		num_of_picks = random.randint(1,number_of_models + 1)
 		r=[0]
@@ -109,8 +109,6 @@ def calculate(filepath):
 	print(accuracy_final)   
 	print(max_acc_model_count)   
 	print(max_acc_model_names)
-
-	
 	
 	f = open("result_reg.txt","w+")
 	f.write("Results are:\n\n")
