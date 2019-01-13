@@ -8,10 +8,8 @@ def mail(send_to_email):
 	from email.mime.base import MIMEBase
 	from email import encoders
 	import ntpath
-	email = 'gprakhar8756@gmail.com'
-	password = 'PrakharGupta#097'
-	# email = os.environ.get('EMAIL')
-	# password = os.environ.get('PASSWORD')
+	email = os.environ.get('EMAIL')
+	password = os.environ.get('PASSWORD')
 	subject = "Ensembling Model Results"
 	message = "Please find the attachment named as result.txt for result"
 	file_location = 'result.txt'
