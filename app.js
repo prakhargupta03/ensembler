@@ -34,7 +34,7 @@ app.post('/upload',function(req,res){
       email = req.body.emailaddress
       //console.log(email)
       model = req.body.radio
-      //console.log(model)
+      console.log(model)
       let {PythonShell} = require('python-shell')
       if (model === 'Classification')
         pyshell = new PythonShell('classification.py');
@@ -43,7 +43,7 @@ app.post('/upload',function(req,res){
       pyshell.send(filename);
       pyshell.send(email);
       pyshell.on('message', function (message) {
-      console.log(message);  
+       console.log(message);  
       }); 
     });
   }
