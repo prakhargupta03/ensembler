@@ -54,13 +54,17 @@ def calculate_results(input_file):
 	import pandas as pd
 	import random as r
 	dataset =  pd.read_csv(input_file)
+	list_col = dataset.columns
+	first_col = list_col[0]
+	list_col = list_col[1:]
+	dataset.rename(columns={first_col:'Actual'},inplace= True)
+
 	l = dataset['Actual'].value_counts().to_dict()
 	val = [*l]
 	print(val)
 	#print(dataset.head())
 
-	list_col = dataset.columns
-	list_col = list_col[1:]
+	
 	#print(list_col)
 
 	ll = 2
