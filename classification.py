@@ -12,7 +12,7 @@ def mail(send_to_email):
 	password = os.environ.get('PASSWORD')
 	subject = "Ensembling Model Results"
 	message = "Please find the attachment named as result.txt and result.csv  for result"
-	
+
 
 	msg = MIMEMultipart()
 
@@ -24,7 +24,7 @@ def mail(send_to_email):
 
 	if(flag == 1):
 
-		file_location = 'result_reg.txt'
+		file_location = 'result.txt'
 		filename = ntpath.basename(file_location)
 		attachment = open(file_location, "rb")
 		part = MIMEBase('application', 'octet-stream')
@@ -32,8 +32,8 @@ def mail(send_to_email):
 		encoders.encode_base64(part)
 		part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
 		msg.attach(part)
-		
-		file_location = 'result_reg.csv'
+
+		file_location = 'result.csv'
 		filename = ntpath.basename(file_location)
 		attachment = open(file_location, "rb")
 		part = MIMEBase('application', 'octet-stream')
@@ -44,7 +44,7 @@ def mail(send_to_email):
 
 	else:
 		body = "Please find the attachment named as result.txt for result"
-		file_location = 'result_reg.txt'
+		file_location = 'result.txt'
 		filename = ntpath.basename(file_location)
 		attachment = open(file_location, "rb")
 		part = MIMEBase('application', 'octet-stream')
@@ -52,7 +52,7 @@ def mail(send_to_email):
 		encoders.encode_base64(part)
 		part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
 		msg.attach(part)
-	
+
 	msg.attach(MIMEText(body, 'plain'))
 	server = smtplib.SMTP('smtp.gmail.com', 587)
 	server.starttls()
@@ -77,7 +77,7 @@ def calculate_results(input_file):
 		print(val)
 		#print(dataset.head())
 
-		
+
 		#print(list_col)
 
 		ll = 2
@@ -93,10 +93,10 @@ def calculate_results(input_file):
 			i = r.randint(2,hl)
 			#print("\n\nNo of models picked:",i)
 
-			
+
 			models = r.sample(list(list_col),i)
 			#print("Models picked: ",models)
-			
+
 			df = pd.DataFrame(columns=["Actual","Predicted"])
 			df['Actual'] = dataset['Actual']
 
@@ -106,14 +106,14 @@ def calculate_results(input_file):
 					vote[c] = 0
 				for m in models:
 					vote[dataset.iloc[j][m]] = vote[dataset.iloc[j][m]] + 1
-				#print(vote)		
+				#print(vote)
 				v=list(vote.values())
 				key=list(vote.keys())
 				df.loc[j,'Predicted'] = key[v.index(max(v))]
 				#print(df.loc[j,'Predicted'])
 
 			#print(df.head())
-			
+
 			from sklearn.metrics import accuracy_score
 			Actual = df['Actual'].values
 			Pred = df['Predicted'].values
@@ -128,14 +128,14 @@ def calculate_results(input_file):
 				max_acc_model_names = models
 			saved_file = "Predicted"+str(k)+".csv"
 			df.to_csv(saved_file,encoding='utf-8', index=False)
-			
+
 		df1.to_csv("result.csv",encoding='utf-8', index=False)
-		
+
 		print("\n\nmax_Acc:",max_acc)
 		print("max_acc_model_count:",max_acc_model_count)
 		print("max_acc_model_names:",max_acc_model_names)
-		
-		
+
+
 		f = open("result.txt","w+")
 		f.write("Results are:\n\n")
 		f.write("Maximum Accuracy is: "+str(max_acc)+"\n")
@@ -156,7 +156,7 @@ def main():
 	email = input()
 	calculate_results(input_file)
 	mail(email)
-    
+
 
 if __name__ == "__main__":
     main()

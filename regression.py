@@ -21,7 +21,7 @@ def mail(send_to_email):
 	msg['Subject'] = subject
 
 	body = message
-
+	global flag
 	if(flag == 1):
 
 		file_location = 'result_reg.txt'
