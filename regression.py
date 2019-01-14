@@ -66,7 +66,6 @@ def calculate(filepath):
 	try:
 		import pandas as pd
 		import random
-		import copy
 
 		dataset = pd.read_csv(filepath)
 		models_check = dataset.iloc[:,1:].values
@@ -77,7 +76,6 @@ def calculate(filepath):
 		accuracy_final = 0
 		max_acc_model_count = 0
 		max_acc_model_names = []
-		ind = 0
 		f1 = open("result_reg.csv","w+")
 		f1.write("Iteration,No_of_models_picked,Models_Picked,Accuracy\n")
 		
@@ -114,8 +112,6 @@ def calculate(filepath):
 			
 			if(accuracy >= accuracy_final):
 				accuracy_final = accuracy
-				model_numbers_final = copy.deepcopy(mn)
-				res_final = copy.deepcopy(res)
 				max_acc_model_count = num_of_picks
 				max_acc_model_names = l
 

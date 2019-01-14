@@ -80,7 +80,6 @@ def calculate_results(input_file):
 
 		#print(list_col)
 
-		ll = 2
 		hl = len(list_col)
 		max_acc = 0.0
 		max_acc_model_count = 0
@@ -127,7 +126,7 @@ def calculate_results(input_file):
 				max_acc_model_count = i
 				max_acc_model_names = models
 			saved_file = "Predicted"+str(k)+".csv"
-			df.to_csv(saved_file,encoding='utf-8', index=False)
+			# df.to_csv(saved_file,encoding='utf-8', index=False)
 
 		df1.to_csv("result.csv",encoding='utf-8', index=False)
 
