@@ -145,7 +145,7 @@ def calculate_results(input_file):
 		global flag
 		flag = 0
 		f = open("result.txt","w+")
-		f.write("You have uploaded the file in correct format. Please check the file format as specified on our webpage.")
+		f.write("You have uploaded the file in incorrect format. Please check the file format as specified on our webpage.")
 		f.close()
 def main():
     # input_file = "classification.csv"

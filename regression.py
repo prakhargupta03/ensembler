@@ -131,7 +131,7 @@ def calculate(filepath):
 		global flag
 		flag = 0
 		f = open("result_reg.txt","w+")
-		f.write("You have uploaded the file in correct format. Please check the file format as specified on our webpage.")
+		f.write("You have uploaded the file in incorrect format. Please check the file format as specified on our webpage.")
 		f.close()
 
 
