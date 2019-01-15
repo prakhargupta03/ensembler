@@ -1,5 +1,5 @@
 flag = 1
-def mail(send_to_email):
+def mail(send_to_email,token):
 	import os
 	print("\n\nMailing the results")
 	import smtplib
@@ -10,7 +10,7 @@ def mail(send_to_email):
 	import ntpath
 	email = os.environ.get('EMAIL')
 	password = os.environ.get('PASSWORD')
-	subject = "Ensembling Model Results"
+	subject = "Ensembling Model Results for token "+token
 	message = "Please find the attachment named as result.txt and result.csv  for result"
 
 
@@ -87,7 +87,7 @@ def calculate_results(input_file):
 		df1 = pd.DataFrame(columns=["Iteration_No", "Model_Count","Models_Picked","Accuracy_Score"])
 
 
-		for k in range(100):
+		for k in range(2000):
 			#print("Iteration",str(k+1))
 			i = r.randint(2,hl)
 			#print("\n\nNo of models picked:",i)
@@ -153,8 +153,9 @@ def main():
     # email = 'prakharpg.83@gmail.com'
 	input_file = input()
 	email = input()
+	token = input()
 	calculate_results(input_file)
-	mail(email)
+	mail(email,token)
 
 
 if __name__ == "__main__":
