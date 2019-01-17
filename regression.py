@@ -70,6 +70,7 @@ def calculate(filepath):
 		dataset = pd.read_csv(filepath)
 		models_check = dataset.iloc[:,1:].values
 		actual = dataset.iloc[:,0].values
+		ind = dataset.columns.values
 		err = 0.1
 		number_of_models = len(models_check[1])
 
@@ -86,9 +87,9 @@ def calculate(filepath):
 			res=[0]
 			mn=[0]
 			for j in range(0,num_of_picks):
-				model_number = random.randint(+0,number_of_models)
+				model_number = random.randint(+0,number_of_models-1)
 				mn.insert(j,model_number)
-				r.insert(j,models_check[:,model_number-1])
+				r.insert(j,models_check[:,model_number])
 			
 			for j in range(0,len(r[0])):
 				sum_column = 0
@@ -105,7 +106,7 @@ def calculate(filepath):
 			
 			l = []
 			for y in range(0,len(mn)-1):
-				x = "M"+ str(mn[y]+1)
+				x = ind[mn[y]+1]
 				l.append(x)
 			
 			f1.write(str(i)+","+str(num_of_picks)+","+"\""+str(l)+"\""+","+str(accuracy)+"\n")
