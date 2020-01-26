@@ -80,7 +80,7 @@ def calculate(filepath):
 		f1 = open("result_reg.csv","w+")
 		f1.write("Iteration,No_of_models_picked,Models_Picked,Accuracy\n")
 		
-		for i in range(500):
+		for i in range(1000):
 			
 			num_of_picks = random.randint(1,number_of_models + 1)
 			r=[0]

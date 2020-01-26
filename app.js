@@ -45,7 +45,7 @@ app.post('/upload',function(req,res){
       pyshell.send(email);
       pyshell.send(token);
       pyshell.on('message', function (message) {
-       console.log(message);  
+      console.log(message);  
       }); 
     });
   }

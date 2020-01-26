@@ -87,7 +87,7 @@ def calculate_results(input_file):
 		df1 = pd.DataFrame(columns=["Iteration_No", "Model_Count","Models_Picked","Accuracy_Score"])
 
 
-		for k in range(500):
+		for k in range(1000):
 			#print("Iteration",str(k+1))
 			i = r.randint(2,hl)
 			#print("\n\nNo of models picked:",i)
@@ -125,7 +125,7 @@ def calculate_results(input_file):
 				max_acc = round(accuracy_score(Actual,Pred),5)
 				max_acc_model_count = i
 				max_acc_model_names = models
-			saved_file = "Predicted"+str(k)+".csv"
+			# saved_file = "Predicted"+str(k)+".csv"
 			# df.to_csv(saved_file,encoding='utf-8', index=False)
 
 		df1.to_csv("result.csv",encoding='utf-8', index=False)
